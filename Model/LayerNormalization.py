@@ -3,7 +3,7 @@ from torch import nn
 
 
 class LayerNormalization(nn.Module):
-    def __init__(self, d_model, eps=10 ** -6):
+    def __init__(self, eps=10 ** -6):
         super().__init__()
         self.eps = eps
         self.alpha = nn.Parameter(torch.ones(1))  # Multiplied
