@@ -3,8 +3,6 @@ import math
 
 
 class MultiHeadAttentionBlock(nn.Module):
-    super().__init__()
-
     def __init__(self, d_model: int, h: int, dropout: float) -> None:
         super().__init__()
         self.d_model = d_model
@@ -40,13 +38,13 @@ class MultiHeadAttentionBlock(nn.Module):
 
         # (Batch, Seq_Len, d_model) --> (Batch, Seq_Len, h, d_k) --> (Batch, h, Seq_len, d_k)
         query = query.view(query.shape[0], query.shape[1], self.h, self.d_k).transpose(1, 2)
-        key = query.view(key.shape[0], key.shape[1], self.h, self.d_k).transpose(1, 2)
+        key = key.view(key.shape[0], key.shape[1], self.h, self.d_k).transpose(1, 2)
         value = value.view(value.shape[0], value.shape[1], self.h, self.d_k).transpose(1, 2)
 
         x, self.attention_scores = MultiHeadAttentionBlock.attention(query, key, value, mask, self.dropout)
 
         # (Batch, h, Seq_Len, d_k) --> (Batch, Seq_Len, h, d_K) --> (Batch, Seq_Len, d_model)
-        x = x.transpose(1, 2).contiguous().view(-1, self.d_h * self.d_k)
+        x = x.transpose(1, 2).contiguous().view(x.shape[0], -1, self.h * self.d_k)
 
         # (Batch, Seq_Len, d_model) --> (Batch, Seq_Len, d_model)
         return self.w_o(x)
