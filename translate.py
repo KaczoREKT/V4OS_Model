@@ -1,6 +1,6 @@
 from pathlib import Path
 from config import get_config, latest_weights_file_path
-from Model.Transformer import build_transformer
+from model import build_transformer
 from tokenizers import Tokenizer
 from datasets import load_dataset
 from dataset import BilingualDataset
@@ -82,4 +82,5 @@ def translate(sentence: str):
 
 
 # read sentence from argument
-translate(sys.argv[1] if len(sys.argv) > 1 else "I am.")
+input("Wciśnij Enter  ")
+translate(sys.argv[1] if len(sys.argv) > 1 else "I am not a very good a student.")
