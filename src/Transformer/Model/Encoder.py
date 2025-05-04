@@ -1,6 +1,6 @@
 from torch import nn
 
-from Model.LayerNormalization import LayerNormalization
+from src.Transformer.Model.LayerNormalization import LayerNormalization
 
 
 class Encoder(nn.Module):

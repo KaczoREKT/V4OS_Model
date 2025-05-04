@@ -1,9 +1,8 @@
 from torch import nn
-from torch.nn.functional import dropout
 
-from Model.FeedForwardBlock import FeedForwardBlock
-from Model.MultiHeadAttentionBlock import MultiHeadAttentionBlock
-from Model.ResidualConnection import ResidualConnection
+from src.Transformer.Model.FeedForwardBlock import FeedForwardBlock
+from src.Transformer.Model.MultiHeadAttentionBlock import MultiHeadAttentionBlock
+from src.Transformer.Model.ResidualConnection import ResidualConnection
 
 
 class DecoderBlock(nn.Module):

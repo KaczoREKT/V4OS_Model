@@ -1,8 +1,8 @@
 from torch import nn
 
-from Model.FeedForwardBlock import FeedForwardBlock
-from Model.MultiHeadAttentionBlock import MultiHeadAttentionBlock
-from Model.ResidualConnection import ResidualConnection
+from src.Transformer.Model.FeedForwardBlock import FeedForwardBlock
+from src.Transformer.Model.MultiHeadAttentionBlock import MultiHeadAttentionBlock
+from src.Transformer.Model.ResidualConnection import ResidualConnection
 
 
 class EncoderBlock(nn.Module):

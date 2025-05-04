@@ -1,14 +1,14 @@
 from torch import nn
 
-from Model.DecoderBlock import DecoderBlock
-from Model.EncoderBlock import EncoderBlock
-from Model.FeedForwardBlock import FeedForwardBlock
-from Model.InputEmbeddings import InputEmbeddings
-from Model.Encoder import Encoder
-from Model.Decoder import Decoder
-from Model.MultiHeadAttentionBlock import MultiHeadAttentionBlock
-from Model.PositionalEncoding import PositionalEncoding
-from Model.ProjectionLayer import ProjectionLayer
+from src.Transformer.Model.DecoderBlock import DecoderBlock
+from src.Transformer.Model.EncoderBlock import EncoderBlock
+from src.Transformer.Model.FeedForwardBlock import FeedForwardBlock
+from src.Transformer.Model.InputEmbeddings import InputEmbeddings
+from src.Transformer.Model.Encoder import Encoder
+from src.Transformer.Model.Decoder import Decoder
+from src.Transformer.Model.MultiHeadAttentionBlock import MultiHeadAttentionBlock
+from src.Transformer.Model.PositionalEncoding import PositionalEncoding
+from src.Transformer.Model.ProjectionLayer import ProjectionLayer
 
 
 class Transformer(nn.Module):

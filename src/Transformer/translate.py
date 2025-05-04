@@ -82,5 +82,4 @@ def translate(sentence: str):
 
 
 # read sentence from argument
-input("Wciśnij Enter  ")
 translate(sys.argv[1] if len(sys.argv) > 1 else "I am not a very good a student.")
